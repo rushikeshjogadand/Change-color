@@ -23,15 +23,14 @@
         }
     </style>
     <script>
-        var show;
         function changetxt(){
-            show=document.getElementById('txtsms').value;
-            document.getElementById('result').innerHTML=show;
+           var show=document.getElementById('txtsms').value;
+            document.getElementById("result").innerHTML=show;
         }
         function rangechange(){
-            var slider = document.getElementById('txtrange').value+"px";
-            result.style.fontSize=slider;
-            document.getElementById('result').innerHTML=show;
+            var range = document.getElementById('txtrange').value+"px";
+            result.style.fontSize=range;
+            document.getElementById("result").innerHTML=show;
         }
 
 
