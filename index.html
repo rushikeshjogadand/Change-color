@@ -23,6 +23,18 @@
         }
     </style>
     <script>
+        var show;
+        function changetxt(){
+            show=document.getElementById('txtsms').value;
+            document.getElementById('result').innerHTML=show;
+        }
+        function rangechange(){
+            var slider = document.getElementById('txtrange').value+"px";
+            result.style.fontSize=slider;
+            document.getElementById('result').innerHTML=show;
+        }
+
+
         function center() {
             document.getElementById("result").style.textAlign='center';
 
@@ -41,14 +53,6 @@
             document.getElementById("result").style.color=document.getElementById("txtcolor").value;
         }
 
-        txtsize.oninput = fontsize;
-        function fontsize1() {
-           //var p1= document.getElementById("result");
-           //var c1= document.getElementById("txtsize").value;
-           //p1.style.fontSize='inherit';
-            result.style.fontsize = this.value + 'px';
-          
-        }
     </script>
 </head>
 
@@ -56,10 +60,13 @@
 
 
     <div class="container-fluid p-5">
+        <div align="center" class="mb-5">
+            <input type="text" name="" id="txtsms" class="form-control w-25" onkeyup="changetxt()">
+        </div>
         <div class="container-fluid d-flex mt-2 justify-content-evenly">
             <div>
                 <h3>Font Size</h3>
-                <input type="range" onchange="fontsize1()" id="txtsize" max="7" min="1" value="1" >
+                <input type="range" min="10" max="40"  onchange="rangechange()" id="txtrange">
             </div>
             <div>
                 <h3>Color</h3>
@@ -81,7 +88,7 @@
         </div>
 
         <div class="mt-5">
-            <p id="result">Welcome To JavaScript</p>
+            <p id="result"></p>
         </div>
     </div>
 
